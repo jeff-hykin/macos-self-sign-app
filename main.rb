@@ -3,19 +3,26 @@ which_app = gets.chomp # chomp removes the trailing newline
 # single quotes cause problems, so replace all the single quotes
 which_app = which_app.gsub(/'/,"'\"'\"'") 
 
-puts "Should I run the commands or show you the commands?\n(choose either \"show\" or \"run\")"
-@show_or_run = gets.chomp # chomp removes the trailing newline
+puts "\n\nShould I run the commands or show you the commands (and let you run them)?\n(choose either \"show\" or \"run\")"
+show_or_run = gets.chomp # chomp removes the trailing newline
 puts
+@user_picked_the_run_option = show_or_run =~ /run/
+if not @user_picked_the_run_option
+    puts "run all of the **indented** lines in your terminal:"
+    puts "got it?"
+    gets
+    puts
+end
 
 # create a function that will sign a specific file/folder
 # basically this whole app just calls this function on a bunch of files/folders
 def sign(filepath)
-    if @show_or_run =~ /run/
+    if @user_picked_the_run_option
         # run the command
         puts `sudo codesign -f -s - '#{filepath}'`.chomp
     else
-        # print out the command to run
-        puts "sudo codesign -f -s - '#{filepath}'"
+        # print out the indented command to run
+        puts "    sudo codesign -f -s - '#{filepath}'"
     end
 end
 
@@ -109,8 +116,11 @@ if answer =~ /y|yes/
         # (probably a dumb idea but whatever, should sign everything that needed to be signed)
         sign(each_name)
     end
+    puts "--------------------------------------------------"
+    puts "        Okay, DONE! Try opening the app!"
+    puts "--------------------------------------------------"
+else
+    puts "--------------------------------------------------"
+    puts "        Okay, DONE! Glad it worked"
+    puts "--------------------------------------------------"
 end
-
-puts "--------------------------------------------------"
-puts "        Okay, DONE! Try opening the app!"
-puts "--------------------------------------------------"
