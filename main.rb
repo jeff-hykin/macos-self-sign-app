@@ -111,7 +111,7 @@ if answer =~ /y|yes/
             # skip those^ kinds of files
             next
         end
-        percent_complete = ((counter/all_subfiles_and_folders.length) * 100).round(2)
+        percent_complete = (((0.0+counter)/all_subfiles_and_folders.length) * 100).round(2)
         puts "#{percent_complete}%: on #{counter} of #{all_subfiles_and_folders.length}"
         # try signing absolutely everything else
         # (probably a dumb idea but whatever, should sign everything that needed to be signed)
