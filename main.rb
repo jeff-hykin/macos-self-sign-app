@@ -3,7 +3,7 @@ which_app = gets.chomp # chomp removes the trailing newline
 # single quotes cause problems, so replace all the single quotes
 which_app = which_app.gsub(/'/,"'\"'\"'") 
 
-puts "\n\nShould I run the commands or show you the commands (and let you run them)?\n(choose either \"show\" or \"run\")"
+puts "\n\nShould I run the commands or show you the commands (and let you run them)?\n(type either \"show\" or \"run\")"
 show_or_run = gets.chomp # chomp removes the trailing newline
 puts
 @user_picked_the_run_option = show_or_run =~ /run/
@@ -98,6 +98,7 @@ end
 puts "-------------------------"
 puts " Don't leave just yet"
 puts "-------------------------"
+puts "After running those commands" if not @user_picked_the_run_option
 puts "try opening the app. If it still fails, I'll try a more brute-force method"
 puts "Should I try the more brute force method? (yes or no)"
 answer = gets.chomp
