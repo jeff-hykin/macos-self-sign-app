@@ -10,7 +10,7 @@ I tested it on Pages, iMovie, and GarageBand.
 <br>
 
 The script can either tell you what commands to run, or run the commands itself (but it will need your password to run them).
-**Pasting random commands from the internet into your terminal is generally a really really bad idea**. You should probably read the code, its only 100 lines in [main.rb](https://raw.githubusercontent.com/jeff-hykin/macos-self-sign-app/main/main.rb) and it reads a lot like English.
+**Pasting random commands from the internet into your terminal is generally a really really bad idea**. You should probably read the code, its only 100 lines in [main.rb](https://raw.githubusercontent.com/jeff-hykin/macos-self-sign-app/main/main.rb) and it reads a lot like English. But if you're feelin lucky, I guess you can just run the command below.
 
 Open the Terminal App, paste this (then press enter). The script itself will lead you through the rest of the process.
 ```
