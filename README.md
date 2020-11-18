@@ -1,7 +1,7 @@
 # macos-self-sign-app
 A script for signing an App so that it will open without needing to ask permission from big brother Apple.
 
-I wrote this script based on [this thread](https://apple.stackexchange.com/questions/64408/can-you-disable-a-code-signature-check)
+I wrote this script based on answers from [this thread](https://apple.stackexchange.com/questions/64408/can-you-disable-a-code-signature-check)
 <br>
 And it was created to solve [this problem](https://www.reddit.com/r/hackintosh/comments/ju5cik/every_appstore_app_crashes_instantly/).
 <br>
